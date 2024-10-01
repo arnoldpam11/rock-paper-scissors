@@ -23,10 +23,10 @@ function getPlayerChoice() {
 		playerChoice === 'paper' ||
 		playerChoice === 'scissors'
 	) {
-		return playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
+		return playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1); // Capitalize first letter
 	} else {
 		alert('Sorry, Invalid Option! Please try again...');
-		return getPlayerChoice();
+		return getPlayerChoice(); // Recursively prompt until valid choice is made
 	}
 }
 
@@ -61,6 +61,7 @@ function checkWinner(player, computer) {
 		}
 	}
 }
+
 // Gameplay Functionality
 function playGame() {
 	while (playerScore < 5 && computerScore < 5) {
@@ -73,13 +74,13 @@ function playGame() {
 		);
 	}
 
+	// Declare the final winner
 	if (playerScore === 5) {
-		alert('Congratulations! You reached out 5 points.. You won the game!');
-	} else if (drawScore === 5) {
-		alert(`It's a big DRAW!!!`);
+		alert('Congratulations! You reached 5 points. You won the game!');
 	} else {
-		alert('Computer reached out 5 points.. You lost the game!');
+		alert('Computer reached 5 points. You lost the game!');
 	}
 }
 
+// Start the game
 playGame();
